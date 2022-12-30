@@ -10,6 +10,7 @@ from flask_login import login_user, \
 from .forms import LoginForm, RegisterForm   # pragma: no cover
 from evapp import db   # pragma: no cover
 from evapp.models import User, bcrypt   # pragma: no cover
+from werkzeug.urls import url_encode   # pragma: no cover
 
 ################
 #### config ####
