@@ -10,7 +10,7 @@ class BaseConfig(object):
     MAIL_USE_SSL = True
     VERSION = ''
     DBNAME = 'template.db'
-    SECRET_KEY = "you-will-never-guess"
+    SECRET_KEY = os.urandom(32) # "you-will-never-guess"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLAlCHEMY_ECHO = False
     DEBUG = False
@@ -20,8 +20,8 @@ class BaseConfig(object):
     os.environ["MAIL_USE_SSL"] = "True"
     os.environ["DBNAME"] = "template.db"
     os.environ["DEBUG"] = "False"
-    os.environ["APP_SETTINGS"] = '{"development": DevelopmentConfig}'
-
+    os.environ["APP_SETTINGS"] = 'development'
+    os.environ["FLASK_ENV"] = 'development'
 
 class DevelopmentConfig(BaseConfig):
     # DB
