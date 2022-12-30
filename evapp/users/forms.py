@@ -5,7 +5,7 @@ from werkzeug.urls import url_encode
 
 class contactForm(Form):
     name = StringField(label='Name', validators=[DataRequired()])
-    email = StringField(label='Email', validators=[DataRequired(), Email(granular_message=True)])
+    email = StringField(label='Email', validators=[DataRequired(), Email("Please enter your email address.")])
     message= StringField(label='Message')
     submit = SubmitField(label="Log In")
 
