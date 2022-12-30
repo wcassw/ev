@@ -1,4 +1,4 @@
-from wtforms import Form, TextField, PasswordField, StringField, validators, PasswordField, SubmitField
+from wtforms import Form, TextField, PasswordField, StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Length, Email, EqualTo
 import email_validator
 from werkzeug.urls import url_encode
