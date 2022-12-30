@@ -1,7 +1,7 @@
 from evapp import db
 
 # create the database and the db table
-db.create_all()
+# db.create_all() # see __init__.py in evapp foldr
 
 # insert data ####################################################
 # db.session.add()
