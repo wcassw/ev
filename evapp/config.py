@@ -24,12 +24,15 @@ class BaseConfig(object):
 class DevelopmentConfig(BaseConfig):
     # DB
     # SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:{CREDS}@localhost:3306/{DBNAME}'.format(quote('s!ldfans'), DBNAME)
+    DB_SERVER = 'localhost'
+    # DATABASE_URI = 'sqlite:///:memory:'
     SQLALCHEMY_DATABASE_URI = 'sqlite:///{}'.format(BaseConfig.DBNAME)
     DEBUG = True
 
 
 class TestingConfig(BaseConfig):
     # SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:%s@localhost:3306/flask_new_testing' % quote('s!ldfans')
+    DB_SERVER = 'localhost'
     SQLALCHEMY_DATABASE_URI = 'sqlite:///{}.test'.format(BaseConfig.DBNAME)
     TESTING = True
     WTF_CSRF_ENABLED = False
@@ -37,6 +40,7 @@ class TestingConfig(BaseConfig):
 
 
 class ProductionConfig(BaseConfig):
+    DB_SERVER = '192.168.1.201'
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:%s@localhost:3306/flask_new' % quote('s!ldfans')
     DEBUG = False
 
@@ -46,3 +50,5 @@ config_setting = {
     "testing": TestingConfig,
     "production": ProductionConfig,
 }
+
+# https://flask.palletsprojects.com/en/1.1.x/config/
