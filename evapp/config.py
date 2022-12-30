@@ -14,6 +14,7 @@ class BaseConfig(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLAlCHEMY_ECHO = False
     DEBUG = False
+    APP_SETTINGS=''
 
 
 class DevelopmentConfig(BaseConfig):
