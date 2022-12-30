@@ -35,6 +35,8 @@ ev pricing
 
 - https://www.geeksforgeeks.org/create-contact-us-using-wtforms-in-flask/
 - https://betterprogramming.pub/how-to-use-flask-wtforms-faab71d5a034
-- https://pythonspot.com/flask-web-forms/
+- https://pythonspot.com/flask-web-forms/ 
 - https://getbootstrap.com/getting-started/
-- https://pypi.org/project/WTForms/
+- https://pypi.org/project/WTForms/ - https://flask-wtf.readthedocs.io/en/1.0.x/
+- https://wtforms.readthedocs.io/en/3.0.x/
+- 
