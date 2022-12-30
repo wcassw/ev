@@ -52,3 +52,4 @@ config_setting = {
 }
 
 # https://flask.palletsprojects.com/en/1.1.x/config/
+# How the flask app.config.from_object work
