@@ -10,6 +10,7 @@ import os
 ################
 #### config ####
 ################
+from evapp.config import DevelopmentConfig, TestingConfig, ProductionConfig
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager()
