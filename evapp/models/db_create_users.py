@@ -1,5 +1,5 @@
 from evapp import db
-from evapp.models import User
+from evapp.models.model import User
 
 # insert data (update on setup)
 db.session.add(User("wcass", "wcass@evapp.com", "change"))
