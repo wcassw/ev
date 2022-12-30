@@ -1,23 +1,21 @@
-from flask_wtf import FlaskForm
-from wtforms import TextField, PasswordField, StringField, validators, PasswordField, SubmitField
+from wtforms import Form, TextField, PasswordField, StringField, validators, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Length, Email, EqualTo
 import email_validator
 from werkzeug.urls import url_encode
-  
-  
-class contactForm(FlaskForm):
+
+class contactForm(Form):
     name = StringField(label='Name', validators=[DataRequired()])
     email = StringField(label='Email', validators=[DataRequired(), Email(granular_message=True)])
     message= StringField(label='Message')
     submit = SubmitField(label="Log In")
 
 
-class LoginForm(FlaskForm):
+class LoginForm(Form):
     username = TextField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
 
 
-class RegisterForm(FlaskForm):
+class RegisterForm(Form):
     username = TextField(
         'username',
         validators=[DataRequired(), Length(min=3, max=25)]
