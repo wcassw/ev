@@ -27,7 +27,7 @@ app.register_blueprint(users_blueprint)
 app.register_blueprint(home_blueprint)
 
 
-from models import User
+from evapp.models.models import User
 
 login_manager.login_view = "users.login"
 
