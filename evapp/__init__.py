@@ -11,8 +11,8 @@ def intial_app(config_name='development'):
 
     CORS(app)
 
-    app.config.from_object(config.config_setting[config_name])  # object-based default configuration
-    app.config.from_pyfile('flask.cfg', silent=True)  # instance-folders configuration
+    app.config.from_object(config.DevelopmentConfig())  # object-based default configuration
+    # app.config.from_pyfile('flask.cfg', silent=True)  # instance-folders configuration
 
     db.init_app(app)
 
