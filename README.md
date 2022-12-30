@@ -38,5 +38,5 @@ ev pricing
 - https://pythonspot.com/flask-web-forms/ 
 - https://getbootstrap.com/getting-started/
 - https://pypi.org/project/WTForms/ - https://flask-wtf.readthedocs.io/en/1.0.x/
-- https://wtforms.readthedocs.io/en/3.0.x/
+- [https://wtforms.readthedocs.io/en/3.0.x/](https://wtforms.readthedocs.io/en/3.0.x/)
 - 
