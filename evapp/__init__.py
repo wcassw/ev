@@ -1,9 +1,9 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import os
-from project import config
+from evapp import config
 from flask_cors import CORS
-from project.models import db
+from evapp.models import db
 
 def intial_app(config_name='development'):
 
@@ -16,7 +16,7 @@ def intial_app(config_name='development'):
 
     db.init_app(app)
 
-    from project.views.user import bp_user
+    from evapp.views.user import bp_user
     app.register_blueprint(bp_user, url_prefix='/user')
 
     with app.app_context():
