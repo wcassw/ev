@@ -1,35 +1,26 @@
-#################
-#### imports ####
-#################
 from flask import Flask
-from flask.ext.sqlalchemy import SQLAlchemy
-from flask.ext.bcrypt import Bcrypt
-from flask.ext.login import LoginManager
+from flask_sqlalchemy import SQLAlchemy
 import os
+from project import config
+from flask_cors import CORS
+from project.models import db
 
-################
-#### config ####
-################
-app = Flask(__name__)
-bcrypt = Bcrypt(app)
-login_manager = LoginManager()
-login_manager.init_app(app)
-app.config.from_object(os.environ['APP_SETTINGS'])
+def intial_app(config_name='development'):
 
-db = SQLAlchemy(app)
+    app = Flask(__name__, instance_relative_config=True)
 
-from evapp.users.views import users_blueprint
-from evapp.home.views import home_blueprint
+    CORS(app)
 
-# register our blueprints
-app.register_blueprint(users_blueprint)
-app.register_blueprint(home_blueprint)
+    app.config.from_object(config.config_setting[config_name])  # object-based default configuration
+    app.config.from_pyfile('flask.cfg', silent=True)  # instance-folders configuration
 
+    db.init_app(app)
 
-from models import User
+    from project.views.user import bp_user
+    app.register_blueprint(bp_user, url_prefix='/user')
 
-login_manager.login_view = "users.login"
+    with app.app_context():
+        # db.drop_all()
+        db.create_all()
 
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.filter(User.id == int(user_id)).first()
+    return app
