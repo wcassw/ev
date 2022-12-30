@@ -14,13 +14,13 @@ class BaseConfig(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLAlCHEMY_ECHO = False
     DEBUG = False
-    APP_SETTINGS=''
+    APP_SETTINGS = '{"development": DevelopmentConfig}'
     
     os.environ["SQLALCHEMY_TRACK_MODIFICATIONS"] = "False"
     os.environ["MAIL_USE_SSL"] = "True"
     os.environ["DBNAME"] = "template.db"
     os.environ["DEBUG"] = "False"
-    os.environ["APP_SETTINGS"] = ""
+    os.environ["APP_SETTINGS"] = '{"development": DevelopmentConfig}'
 
 
 class DevelopmentConfig(BaseConfig):
