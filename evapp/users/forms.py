@@ -6,9 +6,8 @@ import email_validator
   
 class contactForm(FlaskForm):
     name = StringField(label='Name', validators=[DataRequired()])
-    email = StringField(label='Email', validators=[
-      DataRequired(), Email(granular_message=True)])
-       message= StringField(label='Message')
+    email = StringField(label='Email', validators=[DataRequired(), Email(granular_message=True)])
+    message= StringField(label='Message')
     submit = SubmitField(label="Log In")
 
 
