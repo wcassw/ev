@@ -1,6 +1,6 @@
 from wtforms import Form, TextField, PasswordField, StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Length, Email, EqualTo
-import email_validator
+from validate_email import validate_email
 from werkzeug.urls import url_encode
 
 class contactForm(Form):
