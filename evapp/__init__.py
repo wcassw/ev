@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 from evapp import config
 from flask_cors import CORS
-from evapp.models import db
+from evapp.models.model import db
 
 def intial_app(config_name='development'):
 
