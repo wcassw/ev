@@ -15,7 +15,7 @@ app = Flask(__name__)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
-app.config.from_object(config.DevelopmentConfig()) # os.environ['APP_SETTINGS'])
+app.config.from_object(DevelopmentConfig()) # os.environ['APP_SETTINGS'])
 
 db = SQLAlchemy(app)
 
