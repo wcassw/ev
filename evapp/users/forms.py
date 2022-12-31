@@ -180,4 +180,23 @@ To add validation, I put this in Jinja:
 </form>
 
 
+And for flashed messages I use this in my base layout.html that I extend everywhere:
+
+<div>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+                {% if category == 'message' %}
+                  <div class="alert alert-warning" role="alert">
+                {% else %}
+                  <div class="alert alert-{{ category }}" role="alert">
+                {% endif %}
+                  {{ message }}
+                </div>
+            {% endfor %}
+          {% endif %}
+      {% endwith %}
+    </div>
+
+
 """
