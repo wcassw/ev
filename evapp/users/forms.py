@@ -144,6 +144,40 @@ html
     {% endfor %}
 </div>
 
+# ---------------------------------
+
+he usage gets really simple really fast:
+
+from wtforms import validators
+
+from wtforms.validators import Email
+from wtforms_widgets.base_form import BaseForm
+from wtforms_widgets.fields.core import StringField, PasswordField
+
+class RegisterForm(BaseForm):
+    email = StringField('Email Address', [Email(), validators.DataRequired(message='Forgot your email address?')])
+    password = PasswordField('Password', [validators.DataRequired(message='Must provide a password. ;-)')])
+
+<form method="POST" action="{{ url_for('auth.register') }}" accept-charset="UTF-8" role="form">
+    {% for field in form %}
+        {{ field(render_mode='horizontal', autocomplete='off') }}
+    {% endfor %}
+    <input type="submit" value="submit">
+</form>
+
+But this doesn't include validation.
+
+To add validation, I put this in Jinja:
+
+<form method="POST" action="{{ url_for('auth.register') }}" accept-charset="UTF-8" role="form">
+    {% for field in form %}
+        {{ field() }}
+        {% for error in field.errors %}
+          <div class="invalid-feedback">{{ error }}</div>
+        {% endfor %}
+    {% endfor %}
+    <input type="submit" value="submit">
+</form>
 
 
 """
