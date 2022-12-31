@@ -4,11 +4,11 @@
 
 from flask import render_template, Blueprint, \
     request, flash, redirect, url_for   # pragma: no cover
-from flask.ext.login import login_required, current_user   # pragma: no cover
+from flask_login import login_required, current_user   # pragma: no cover
 
 from .forms import MessageForm   # pragma: no cover
-from project import db   # pragma: no cover
-from project.models import BlogPost   # pragma: no cover
+from evapp.models import db   # pragma: no cover
+from evapp.models.model import BlogPost   # pragma: no cover
 
 ################
 #### config ####
