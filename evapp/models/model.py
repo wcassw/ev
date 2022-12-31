@@ -1,5 +1,5 @@
 from evapp.models import db
-from bcrypt import bcrypt
+import bcrypt
 
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
