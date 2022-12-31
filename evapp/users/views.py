@@ -11,6 +11,7 @@ from .forms import LoginForm, RegisterForm   # pragma: no cover
 from evapp.models import db   # pragma: no cover
 from evapp.models.model import User   # pragma: no cover
 from werkzeug.urls import url_encode   # pragma: no cover
+from bcrypt import bcrypt
 
 ################
 #### config ####
