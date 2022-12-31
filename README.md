@@ -13,6 +13,7 @@ ev pricing
 - python3.9 -m pip install --upgrade pip
 - python3.9 -m pip install -r requirements.txt
 - python3.9 run.py
+- http://127.0.0.1:5000/user/login
 
 
 # Resources
