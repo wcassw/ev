@@ -1,7 +1,7 @@
 from evapp.models import db
 import bcrypt
 
-from sqlalchemy import ForeignKey
+from sqlalchemy import Table, ForeignKey, Column, Integer, String, Float
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -38,10 +38,10 @@ class User(db.Model):
 
     __tablename__ = "users"
 
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String, nullable=False)
-    email = db.Column(db.String, nullable=False)
-    password = db.Column(db.String)
+    id = Column(Integer, primary_key=True)
+    name = Column(String, nullable=False)
+    email = Column(String, nullable=False)
+    password = Column(String)
     posts = relationship("BlogPost", backref="author")
 
     def __init__(self, name, email, password):
