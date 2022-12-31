@@ -17,7 +17,7 @@ def intial_app(config_name='development'):
     db.init_app(app)
 
     from evapp.users.views import users_blueprint # bp_user
-    app.register_blueprint(bp_user, url_prefix='/user')
+    app.register_blueprint(users_blueprint, url_prefix='/user')
 
     with app.app_context():
         # db.drop_all()
