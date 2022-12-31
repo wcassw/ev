@@ -1,4 +1,4 @@
-from evapp import app
+from evapp import *
 
 if __name__ == '__main__':
     app.run()
